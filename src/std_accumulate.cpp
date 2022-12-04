@@ -1,18 +1,15 @@
 #include <functional>
 #include <iostream>
 #include <numeric>
-#include <string>
-#include <vector>
 
-const std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
-const std::vector<std::string> strings = {"one", "two", "three", "four"};
+#include "generators.hpp"
 
-int sum_all_numbers()
+int sum_all_numbers(const std::vector<int>& numbers)
 {
     return std::accumulate(numbers.begin(), numbers.end(), 0);
 }
 
-int sum_even_numbers()
+int sum_even_numbers(const std::vector<int>& numbers)
 {
     return std::accumulate(numbers.begin(), numbers.end(), 0,
         [](int current_sum, const int n) {
@@ -20,17 +17,17 @@ int sum_even_numbers()
         });
 }
 
-int multiply_numbers()
+int multiply_numbers(const std::vector<int>& numbers)
 {
     return std::accumulate(numbers.begin(), numbers.end(), 1, std::multiplies{});
 }
 
-std::string concatenate_strings()
+std::string concatenate_strings(const std::vector<std::string>& strings)
 {
     return std::accumulate(strings.begin(), strings.end(), std::string{});
 }
 
-std::string concatenate_strings_with_delimiter()
+std::string concatenate_strings_with_delimiter(const std::vector<std::string>& strings)
 {
     return std::accumulate(std::next(strings.begin()), strings.end(), strings.front(),
         [](const std::string& accu, const std::string& s) {
@@ -40,9 +37,12 @@ std::string concatenate_strings_with_delimiter()
 
 int main()
 {
-    std::cout << sum_all_numbers() << '\n';
-    std::cout << sum_even_numbers() << '\n';
-    std::cout << multiply_numbers() << '\n';
-    std::cout << concatenate_strings() << '\n';
-    std::cout << concatenate_strings_with_delimiter() << '\n';
+    const std::vector<int> numbers = generate_numbers(5);
+    const std::vector<std::string> strings = generate_strings(5);
+
+    std::cout << sum_all_numbers(numbers) << '\n';
+    std::cout << sum_even_numbers(numbers) << '\n';
+    std::cout << multiply_numbers(numbers) << '\n';
+    std::cout << concatenate_strings(strings) << '\n';
+    std::cout << concatenate_strings_with_delimiter(strings) << '\n';
 }

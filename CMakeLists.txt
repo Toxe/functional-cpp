@@ -4,7 +4,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 project("Functional C++" LANGUAGES CXX)
 
 # testing settings
-#include(cmake/Testing.cmake)
+include(cmake/Testing.cmake)
 
 # adjust or override some CMake defaults
 include(cmake/OverrideCMakeDefaults.cmake)
@@ -19,4 +19,5 @@ include(cmake/StaticAnalyzers.cmake)
 # sanitizers
 include(cmake/Sanitizers.cmake)
 
+add_subdirectory(src/helpers)
 add_subdirectory(src)
