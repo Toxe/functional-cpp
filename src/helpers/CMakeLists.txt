@@ -1,4 +1,5 @@
 add_library(lib_helpers
+        benchmark.hpp
         generators.cpp
         generators.hpp
         )

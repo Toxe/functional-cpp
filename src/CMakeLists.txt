@@ -1,5 +1,6 @@
 set(ALL_TARGETS
         std_accumulate
+        std_reduce
         )
 
 foreach (target ${ALL_TARGETS})
