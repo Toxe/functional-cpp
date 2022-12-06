@@ -19,5 +19,6 @@ include(cmake/StaticAnalyzers.cmake)
 # sanitizers
 include(cmake/Sanitizers.cmake)
 
-add_subdirectory(src/helpers)
+find_package(benchmark CONFIG REQUIRED)
+
 add_subdirectory(src)

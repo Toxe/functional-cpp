@@ -1,8 +1,6 @@
-#include <functional>
-#include <iostream>
-#include <numeric>
+#include "accumulate.hpp"
 
-#include "generators.hpp"
+#include <numeric>
 
 int sum_all_numbers(const std::vector<int>& numbers)
 {
@@ -33,16 +31,4 @@ std::string concatenate_strings_with_delimiter(const std::vector<std::string>& s
         [](const std::string& accu, const std::string& s) {
             return accu + ", " + s;
         });
-}
-
-int main()
-{
-    const std::vector<int> numbers = generate_numbers(5);
-    const std::vector<std::string> strings = generate_strings(5);
-
-    std::cout << sum_all_numbers(numbers) << '\n';
-    std::cout << sum_even_numbers(numbers) << '\n';
-    std::cout << multiply_numbers(numbers) << '\n';
-    std::cout << concatenate_strings(strings) << '\n';
-    std::cout << concatenate_strings_with_delimiter(strings) << '\n';
 }

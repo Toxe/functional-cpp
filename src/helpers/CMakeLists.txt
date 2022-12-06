@@ -9,7 +9,6 @@ target_compile_features(lib_helpers PUBLIC cxx_std_20)
 target_compile_options(lib_helpers PRIVATE ${SANITIZER_COMPILE_OPTIONS} ${DEFAULT_COMPILER_OPTIONS} ${DEFAULT_COMPILER_WARNINGS})
 target_link_options(lib_helpers PRIVATE ${SANITIZER_LINK_OPTIONS})
 target_link_libraries(lib_helpers PRIVATE ${SANITIZER_LINK_LIBRARIES})
-target_include_directories(lib_helpers INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Tests
 if (BUILD_TESTING)
