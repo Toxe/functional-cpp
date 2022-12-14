@@ -18,7 +18,9 @@ const std::vector<std::tuple<std::string_view, int, int>> input = {
     {"nfddjzjjjmrjjfttzctzzhqzqbbvhhcfcpcqpcqpccsmsvsswbwzwfffnvfvpfvffhnnrgngzgrrhvhfhvvmjvjcccvppqdppbnbjjzlzflfccjjtctqccrhrnhnqhqwwjssjjhpjjcqqdgghddhfdfbffdpfdfzdddthhrcrbrqrbqqbcbnnwbbzcbzccmqqwllrljjjpqpdpsddmbmccwwgngmmzzzpbpspnprnppprmmwfwffrrpsrrchrrrrdqdfddnvnjnppqmqhhpshhjmhjhzjhhhzllbpbnnngdgzgmmjvvprrhqrhqhpqhqqrnqnddvjvvftfggfcgfffgrghhbmbzzjczzcscrccgbbjbqjbjsbsqbqttbqbfqqqrzrmzrmmcwcmwmrwmwnmnfnjjbdjbbslltjjmgmrmllhbhsbsmsqmqllvjjrvjrjcrrtztjzjbjsbbrjjvbjjgqjjpjsszpszsnznllvmlmfmppbvbzvvddtbtrbttchthjthjhnjnqnqrrllnflnnljnnzjjswjwllpmmpnnqnrrndnnbwwmcmcmbbhjjbbfpfvpvttcvvhshqqznzqqdndldmllpgptgptpbblzlddgqqdmmvpvvrccfvvjrvjjgpggqcggjbgbqqcgqccgppffjppzczmzdmmqppwcwlcwwhccfpcphcctvtzthtzhhnmnvmnnvqnqnpnqqwqsqdsszwzbwwgcwcrrtprrfhhcmcqcdcvdcccnpptgpgwpprsprsrdrtdrtrntrtprtppstsccbwwvnvpnvpnptpqttzbzcznzhzhddfbflfcchvchhplhlwhhlhglhhwqqzlqzlzvlvtlvtvrttglttslslclslqssslclbbrjrpjjcscfsfppjlplhplptlltlflglffdttmffrggfjjmllbnlnbnznqnfffmhhnmmsgmsmfsszggpnnhmhnnpwnndqqlmqmnmtnmtnttvtztlzlnzzsdsnssvhsszcscffcpczpcpffpwfwnwhnntnssptthccbnndppgjgpjpssbnnpgnpppjtjqqzfqqrrbmmbdddzjzvzwzssnpsnspnpvnpppjppvsvffmpffbcffslfsfmsmmqzzmttnsnqsqcsqsbqbcclqqphpttvrtrlrhrthhlppscsrsjjvljlmlwlslblqqqgdsbrzwzjzwcjrwbpfmjtmdgjvbcfvtvmsfjtjcmtlzmsjlnmhcswcmjndggdsmqfmmdngjpvrsbhrchldnhdhfdlwccnfmgbwfzppgzzcvblvsmqbfghrgdwlzdcvpqthgbdlwbrfpsvlgpdqznftswgwvchjfrblbdsqjmzchfhlrjhpbrdgvgrrmhrnrdbrdsfsgzvqfdtnvddbtcjwphrhgpqlzjssrgzjcncjnbrzvhgbwpgtfnqhpspmgptzcgvjqgzpmwtjtzldqnclmplwdpzcppgcbrsnlzfgmlnljjhfzrftnhdfnqchgdqrfcjszvbmdrghwzmjnwgnrlptljzqrwsmcfwvbcjgsfdjhnqgzzztmcgmndbtdwvqmzlfcmhfgpqztwgjdccncdccpgbcvhfzbhhbjhgjpdzcmrwgtvrmzdwjtmlzllmgplpqjwwwvbrzgmvpcvwchcwfgbjtzrfctgvfrpphbnsbjlswrztqmchtzfstzdgdwwvhpdhztbmsrbqmndpgvnwwdtgzcddvmvbjstqmjvtzlzgrhzhvplwnpphctvtlvnpmwfzmqcvrnfmmgtsgbcjpffrvbpqpszfpjsjtzqmcnzhnjnpwtvgfqntnhhjhmbvmlvmqgggrnfmmmsvfsqffbvwtzlfhlbjqhrltzwfstvjqhbbblqdbcmgtjgmzdtpslbzsgnmpzsswjlwdpzpmmvmpntbhnqlwrcrfbghzhwlhhpjqztjjrrfscrtwtnlqlqmdbmbfnvngvvthhghgsvqlqvgvmtjmjtwpcznzqhhfpqqfphcdrtzjjhsffslthzwpmsnltnjmfgpsjgqzdwrtgnhflhrnjwqftpnqgptgvgjptzhhtqhtddsfhppmmqcrsnlnrswpjhqgzbpwzfzptzqzzwltlrmjwjrwdgvvzhshqqrhtzmvqpfljlvpmrzbqpscpvsfdbdbcbdwwhpmldlrgpwslzhtbpgtzscfhjlgwcgbhcbftpftvpggvcdvndqnfvfqbwrjtdcbwpsbqpzmwdhjpmjhjmlcdphrjbgsnmcmvfnrggfvttclmbvsfjpnbndbblnbdfqzmsldlswdrtzqsqppjshtlrtccthmmpjgddbbgfgthnzdffbtrpchzgbvqvjcsnpgbrzrczzmzrmhjrlvvgmsqddjsqmcqfmwnhznbczzjlpmhnfwjtrfgffsjdlwgdwwlvdpdlvszphntrvttczgnwffsdsvjmqbthgcgfjgznrfnbplbvgsjbsglhnrjpbldhmznqgqpvldvhcpmmwzfjdjdbnprtrrnwsszjhmngvmtsrqdqdsprwhjpsqwqbsdtpptwlbfbsvdgrplrvpnfbzwrdsdbvhpgwcnqvwdcswdmdltchnngpmlqvchbnrpzcnfhvlzbwbnmssbhpvvmpcwvrwzpfpssndwwfnrslpjwhwrfsswmgtszrhczcrclpldpwpghgptmzzjjjtvjcnncjpfbcvldbnlnqtsqdswcsrqcfgvwbwdvbdwwzndfvcstjbfngtqqwsbpdjdgqdlsnwgcvmmhrqcqvdbqdqczzwzlfgffbwzbfdnpvprzmqclllsdvctwjfgqbchhmsntlvnlspwtnhgshwrvzccfmfrscqwrvdccwqnrccctjrvvnqbrphrfvfrfldbbthhrdzvdmfbctsmvgwmvpdslgbcpqqdvpsjcdvmctwghdsjtmhhvdswbcvtmsnsztfghnnfhflmmnmdqpvpdplllzgqgnsjwsrgzfwhrwhcscvrgcrgjdghqjfbswtgjsvnpqznrvbdbrplwdmbqhtbcfccnpwqlsdstnpcfpbfgqrzmcqhflmcfvbbnwrrblnfslsrwpwlbvqfhgpdwzmgvftssrvdmhnmwdfqmsvqbltlmmwmjrrhgpgznqbwhcqgphvzqmntbbdhhpnlbbffjgmcdntgwmtblwlzrcdcdbtrllrdnznrrsglnwhtwbrfdrpvgqwsgzwghbtsfwqlchgsnvfmvnzntlsnlwrnjjltrpmhwnzmhrqdlvvzbfgwlwgdsgcjcjfvhbcjgzlqtsljvzcvlppqdszvdbsmgddrtmvbcpbpppcpvhzfsjrmtcpzljbhpnjjmcdwslrhslccpljrtvcscbcltpshpnrqvtdfzbbfqtpbvznvrbflwvbvrhqpzltsdrnqccsfgzzftvjfqslcnmfvwtpdbjhtzwrgvntgnfvqtdrjdgglvrnqfzsbhnvhcdbctthdrjnvwlcsjtmphpvlqjngwjnngmqqnslrrsdfpfbvsvcwjtfmwtbpnnghtvvwlphbnsgflvsfdcqrctvjfjrwqjdmbbcclwvlstbgbfqjgbpbqfwdbpmnvqnfpbhrfhwltmcszpwnvtvhrvpcqhzdppjwttlhgsnvmsrwrnwvgzpbwljjjsjzctftzftvmsstpjnzvmmrgbbpmfmfrszwjdgzfhpvsfdqbbhgvfvqrrtqwlwzwwsnnmmvmlwjzvgrwhmffzwrqwbcdtbtzpspbnqgprdqtzrpmgvnmbsnjnvtzgmhqqtrvltbsrwjlssncdppgpmzqzbzvbpjpfwmvgsbhffzpbctmqvfwhsgdjtwqhrhmgnqpvmpjzhppvcbrpwmdshzcrwzdzcjmhfvjgtbznsmdjphlssmlmbhtmnsqnjfsjwhjvgztnwhmnztqppchngdnhzwpsvqqpzdwgbhcbzvmbnqmghbhgvrqhtfzhgvqdbpvdrjsqrdnhqhrwdlczvtnzwfrqhnffwdvtrnqsmmcjtrhmgbwcmnzbbvdsrlbbtwslhghwprpglpq", 1210, 3476},
 };
 
-int find_position(const std::string_view& line, const int length, const std::function<bool(const std::string_view&)>& check)
+using check_func = std::function<bool(const std::string_view&)>;
+
+int find_position(const std::string_view& line, const int length, const check_func& check)
 {
     for (auto it = line.begin(); it != std::prev(line.end(), length - 1); ++it)
         if (check({it, it + length}))
@@ -27,141 +29,68 @@ int find_position(const std::string_view& line, const int length, const std::fun
     return -1;
 }
 
-int find_position_with_bucket_size(const std::string_view& line, const int length, const std::size_t bucket_size, const std::function<bool(const std::string_view&, std::size_t bucket_size)>& check)
+void run_check(const check_func& check)
 {
-    for (auto it = line.begin(); it != std::prev(line.end(), length - 1); ++it)
-        if (check({it, it + length}, bucket_size))
-            return static_cast<int>(std::distance(line.begin(), it) + length);
+    for (const auto& [line, expected_result1, expected_result2] : input) {
+        const auto result1 = find_position(line, 4, check);
+        const auto result2 = find_position(line, 14, check);
 
-    return -1;
+        benchmark::DoNotOptimize(result1);
+        benchmark::DoNotOptimize(result2);
+
+        assert(result1 == expected_result1);
+        assert(result2 == expected_result2);
+    }
 }
 
 static void BM_sorted_strings(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, sorted_strings);
-            const auto result2 = find_position(line, 14, sorted_strings);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(sorted_strings);
 }
 
 static void BM_bits(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, bits);
-            const auto result2 = find_position(line, 14, bits);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(bits);
 }
 
 static void BM_bits_and_early_return(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, bits_and_early_return);
-            const auto result2 = find_position(line, 14, bits_and_early_return);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(bits_and_early_return);
 }
 
 static void BM_bitset(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, bitset);
-            const auto result2 = find_position(line, 14, bitset);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(bitset);
 }
 
 static void BM_bitset_and_early_return(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, bitset_and_early_return);
-            const auto result2 = find_position(line, 14, bitset_and_early_return);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(bitset_and_early_return);
 }
 
 static void BM_counting_chars(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, counting_chars);
-            const auto result2 = find_position(line, 14, counting_chars);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(counting_chars);
 }
 
 static void BM_counting_chars_and_early_return(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position(line, 4, counting_chars_and_early_return);
-            const auto result2 = find_position(line, 14, counting_chars_and_early_return);
-
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check(counting_chars_and_early_return);
 }
 
 static void BM_unordered_set(benchmark::State& state)
 {
-    for (auto _ : state) {
-        for (const auto& [line, expected_result1, expected_result2] : input) {
-            const auto result1 = find_position_with_bucket_size(line, 4, static_cast<std::size_t>(state.range(0)), unordered_set);
-            const auto result2 = find_position_with_bucket_size(line, 14, static_cast<std::size_t>(state.range(0)), unordered_set);
+    const auto bucket_size = static_cast<std::size_t>(state.range(0));
 
-            benchmark::DoNotOptimize(result1);
-            benchmark::DoNotOptimize(result2);
-
-            assert(result1 == expected_result1);
-            assert(result2 == expected_result2);
-        }
-    }
+    for (auto _ : state)
+        run_check([=](const auto& line) { return unordered_set(line, bucket_size); });
 }
 
 BENCHMARK(BM_sorted_strings)->Unit(benchmark::kMicrosecond);
